@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>G 100 Forex Signal Pro</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #070b0f;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            padding: 35px 0 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #20d67b;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            color: #8f9ba5;
+            font-size: 15px;
+        }
+
+        /* =========================
+           PRICING PAGE
+        ========================= */
+
+        #plansPage {
+            display: block;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 0 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 30px;
+            background: rgba(32, 214, 123, 0.1);
+            border: 1px solid rgba(32, 214, 123, 0.25);
+            color: #20d67b;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #9ba5ad;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           PRICING CARDS
+        ========================= */
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .plan-card {
+            position: relative;
+            background: linear-gradient(
+                145deg,
+                #11171d,
+                #0b1015
+            );
+            border: 1px solid #202931;
+            border-radius: 22px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-6px);
+            border-color: #20d67b;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .plan-card.popular {
+            border: 1px solid #20d67b;
+            box-shadow: 0 0 45px rgba(32, 214, 123, 0.08);
+        }
+
+        .popular-label {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #20d67b;
+            color: #06100b;
+            padding: 7px 18px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .plan-name {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #9aa5ad;
+            margin-bottom: 15px;
+        }
+
+        .plan-price {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .plan-price small {
+            font-size: 16px;
+            color: #8c979f;
+            letter-spacing: 0;
+        }
+
+        .duration {
+            margin-top: 5px;
+            color: #20d67b;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .plan-description {
+            margin-top: 22px;
+            color: #8e9aa3;
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 46px;
+        }
+
+        .features {
+            list-style: none;
+            margin: 28px 0;
+            flex: 1;
+        }
+
+        .features li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: #cbd2d7;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #20d67b;
+            font-weight: 800;
+        }
+
+        .choose-btn {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            background: #182128;
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .choose-btn:hover {
+            background: #20d67b;
+            color: #06100b;
+        }
+
+        .popular .choose-btn {
+            background: #20d67b;
+            color: #06100b;
+        }
+
+        .popular .choose-btn:hover {
+            background: #2bea8a;
+        }
+
+        /* =========================
+           COMPARISON
+        ========================= */
+
+        .comparison {
+            margin: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #8e999f;
+            font-size: 14px;
+        }
+
+        .comparison-box {
+            overflow-x: auto;
+            border: 1px solid #202931;
+            border-radius: 18px;
+            background: #0c1116;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            padding: 18px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1c252c;
+            font-size: 14px;
+        }
+
+        th {
+            color: white;
+            background: #11181e;
+        }
+
+        td:first-child,
+        th:first-child {
+            text-align: left;
+        }
+
+        td {
+            color: #9ca7ae;
+        }
+
+        .check {
+            color: #20d67b;
+            font-weight: 800;
+        }
+
+        /* =========================
+           PAYMENT PAGE
+        ========================= */
+
+        #paymentPage {
+            display: none;
+            padding: 50px 0 80px;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #8f9ba5;
+            cursor: pointer;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            color: #20d67b;
+        }
+
+        .payment-wrapper {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .payment-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .payment-title h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .payment-title p {
+            color: #8f9ba5;
+        }
+
+        .payment-card {
+            background: #0d1318;
+            border: 1px solid #202931;
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .order-summary {
+            background: #11181e;
+            border-radius: 15px;
+            padding: 22px;
+            margin-bottom: 28px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            color: #929da5;
+            font-size: 14px;
+        }
+
+        .summary-row strong {
+            color: white;
+        }
+
+        .total-row {
+            border-top: 1px solid #273038;
+            margin-top: 10px;
+            padding-top: 18px;
+        }
+
+        .total-row strong {
+            color: #20d67b;
+            font-size: 24px;
+        }
+
+        .payment-section-title {
+            font-size: 17px;
+            margin-bottom: 16px;
+        }
+
+        .crypto-select {
+            width: 100%;
+            padding: 15px;
+            background: #11181e;
+            border: 1px solid #29333b;
+            border-radius: 12px;
+            color: white;
+            outline: none;
+            margin-bottom: 25px;
+        }
+
+        .crypto-select:focus {
+            border-color: #20d67b;
+        }
+
+        .payment-details {
+            background: #11181e;
+            border-radius: 15px;
+            padding: 22px;
+        }
+
+        .payment-label {
+            display: block;
+            color: #8f9ba5;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .amount {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .wallet-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wallet-address {
+            flex: 1;
+            background: #080d11;
+            border: 1px solid #273139;
+            border-radius: 10px;
+            padding: 14px;
+            color: #d9dfe3;
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            border: none;
+            border-radius: 10px;
+            padding: 0 18px;
+            background: #20d67b;
+            color: #06100b;
+            font-weight: 800;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: #2bea8a;
+        }
+
+        .qr-container {
+            margin: 25px auto 10px;
+            width: 190px;
+            height: 190px;
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .warning {
+            margin-top: 22px;
+            padding: 16px;
+            border-radius: 12px;
+            background: rgba(255, 174, 0, 0.07);
+            border: 1px solid rgba(255, 174, 0, 0.2);
+            color: #c5b58c;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .steps {
+            margin-top: 28px;
+        }
+
+        .step {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .step-number {
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(32, 214, 123, 0.1);
+            color: #20d67b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 13px;
+        }
+
+        .step-content strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .step-content span {
+            color: #89959d;
+            font-size: 13px;
+        }
+
+        .confirm-area {
+            border-top: 1px solid #222c33;
+            margin-top: 30px;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .confirm-area p {
+            color: #929da5;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            background: #20d67b;
+            color: #06100b;
+            font-size: 15px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .confirm-btn:hover {
+            background: #2bea8a;
+            transform: translateY(-1px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #66727a;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: auto;
+            }
+
+            .plan-card {
+                padding: 28px;
+            }
+
+            .hero {
+                padding-top: 35px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 94%;
+            }
+
+            header {
+                padding-top: 25px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .payment-title h1 {
+                font-size: 31px;
+            }
+
+            .payment-card {
+                padding: 20px;
+            }
+
+            .wallet-row {
+                flex-direction: column;
+            }
+
+            .copy-btn {
+                height: 45px;
+            }
+
+            .qr-container {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                G 100 <span>Forex Signal Pro</span>
+            </div>
+
+            <div class="subtitle">
+                Choose your 30-day access plan
+            </div>
+        </div>
+    </header>
+
+
+    <!-- =========================
+         PLANS PAGE
+    ========================= -->
+
+    <main id="plansPage">
+
+        <section class="hero">
+            <div class="container">
+
+                <div class="badge">
+                    30 DAYS ACCESS
+                </div>
+
+                <h1>
+                    Choose Your Plan
+                </h1>
+
+                <p>
+                    Select the level of G 100 Forex Signal Pro
+                    access that fits your trading needs.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- PRICING -->
+
+        <section>
+            <div class="container">
+
+                <div class="pricing-grid">
+
+                    <!-- BASIC -->
+
+                    <div class="plan-card">
+
+                        <div class="plan-name">
+                            BASIC
+                        </div>
+
+                        <div class="plan-price">
+                            $50 <small>/ 30 days</small>
+                        </div>
+
+                        <div class="duration">
+                            30 Days Access
+                        </div>
+
+                        <div class="plan-description">
+                            Standard access to G 100 Forex Signal Pro.
+                        </div>
+
+                        <ul class="features">
+
+                            <li>
+                                G 100 Forex Signal Pro access
+                            </li>
+
+                            <li>
+                                Forex BUY & SELL signals
+                            </li>
+
+                            <li>
+                                Standard signal frequency
+                            </li>
+
+                            <li>
+                                Standard market opportunities
+                            </li>
+
+                            <li>
+                                Telegram signal delivery
+                            </li>
+
+                            <li>
+                                30-day access
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="choose-btn"
+                            onclick="selectPlan('Basic', 50)"
+                        >
+                            Choose Basic — $50
+                        </button>
+
+                    </div>
+
+
+                    <!-- ADVANCED -->
+
+                    <div class="plan-card popular">
+
+                        <div class="popular-label">
+                            MOST POPULAR
+                        </div>
+
+                        <div class="plan-name">
+                            ADVANCED
+                        </div>
+
+                        <div class="plan-price">
+                            $100 <small>/ 30 days</small>
+                        </div>
+
+                        <div class="duration">
+                            30 Days Access
+                        </div>
+
+                        <div class="plan-description">
+                            More signals and more market opportunities.
+                        </div>
+
+                        <ul class="features">
+
+                            <li>
+                                Everything in Basic
+                            </li>
+
+                            <li>
+                                More trading signals
+                            </li>
+
+                            <li>
+                                Increased signal frequency
+                            </li>
+
+                            <li>
+                                More market opportunities
+                            </li>
+
+                            <li>
+                                BUY & SELL signals
+                            </li>
+
+                            <li>
+                                Telegram signal delivery
+                            </li>
+
+                            <li>
+                                30-day access
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="choose-btn"
+                            onclick="selectPlan('Advanced', 100)"
+                        >
+                            Choose Advanced — $100
+                        </button>
+
+                    </div>
+
+
+                    <!-- PRO -->
+
+                    <div class="plan-card">
+
+                        <div class="plan-name">
+                            PRO
+                        </div>
+
+                        <div class="plan-price">
+                            $200 <small>/ 30 days</small>
+                        </div>
+
+                        <div class="duration">
+                            30 Days Access
+                        </div>
+
+                        <div class="plan-description">
+                            Maximum signal access for customers who want the highest tier.
+                        </div>
+
+                        <ul class="features">
+
+                            <li>
+                                Everything in Advanced
+                            </li>
+
+                            <li>
+                                Maximum signal frequency
+                            </li>
+
+                            <li>
+                                Maximum market opportunities
+                            </li>
+
+                            <li>
+                                Premium signal access
+                            </li>
+
+                            <li>
+                                Priority signal delivery
+                            </li>
+
+                            <li>
+                                BUY & SELL signals
+                            </li>
+
+                            <li>
+                                Telegram signal delivery
+                            </li>
+
+                            <li>
+                                30-day access
+                            </li>
+
+                        </ul>
+
+                        <button
+                            class="choose-btn"
+                            onclick="selectPlan('Pro', 200)"
+                        >
+                            Choose Pro — $200
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- COMPARISON -->
+
+        <section class="comparison">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        Compare Plans
+                    </h2>
+
+                    <p>
+                        Choose the level of access that works for you.
+                    </p>
+
+                </div>
+
+
+                <div class="comparison-box">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Feature</th>
+                                <th>Basic</th>
+                                <th>Advanced</th>
+                                <th>Pro</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Price</td>
+                                <td>$50</td>
+                                <td>$100</td>
+                                <td>$200</td>
+                            </tr>
+
+                            <tr>
+                                <td>Duration</td>
+                                <td>30 Days</td>
+                                <td>30 Days</td>
+                                <td>30 Days</td>
+                            </tr>
+
+                            <tr>
+                                <td>BUY & SELL Signals</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+
+                            <tr>
+                                <td>Signal Frequency</td>
+                                <td>Standard</td>
+                                <td>Increased</td>
+                                <td>Maximum</td>
+                            </tr>
+
+                            <tr>
+                                <td>Market Opportunities</td>
+                                <td>Standard</td>
+                                <td>More</td>
+                                <td>Maximum</td>
+                            </tr>
+
+                            <tr>
+                                <td>Telegram Delivery</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+
+                            <tr>
+                                <td>Premium Signal Access</td>
+                                <td>—</td>
+                                <td>—</td>
+                                <td class="check">✓</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PAYMENT PAGE
+    ========================= -->
+
+    <main id="paymentPage">
+
+        <div class="container">
+
+            <div class="payment-wrapper">
+
+                <button
+                    class="back-button"
+                    onclick="goBack()"
+                >
+                    ← Back to Plans
+                </button>
+
+
+                <div class="payment-title">
+
+                    <div class="badge">
+                        SECURE CRYPTO PAYMENT
+                    </div>
+
+                    <h1>
+                        Complete Your Payment
+                    </h1>
+
+                    <p>
+                        Send the exact amount to the wallet address below.
+                    </p>
+
+                </div>
+
+
+                <div class="payment-card">
+
+
+                    <!-- ORDER SUMMARY -->
+
+                    <div class="order-summary">
+
+                        <div class="summary-row">
+
+                            <span>Product</span>
+
+                            <strong>
+                                G 100 Forex Signal Pro
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>Plan</span>
+
+                            <strong id="selectedPlan">
+                                Advanced
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>Duration</span>
+
+                            <strong>
+                                30 Days
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row total-row">
+
+                            <span>Total</span>
+
+                            <strong id="selectedPrice">
+                                $100
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CRYPTO -->
+
+                    <h3 class="payment-section-title">
+                        Pay With Crypto
+                    </h3>
+
+
+                    <select
+                        class="crypto-select"
+                        id="cryptoSelect"
+                        onchange="updatePaymentMethod()"
+                    >
+
+                        <option value="USDT">
+                            USDT
+                        </option>
+
+                        <option value="BTC">
+                            Bitcoin (BTC)
+                        </option>
+
+                        <option value="ETH">
+                            Ethereum (ETH)
+                        </option>
+
+                    </select>
+
+
+                    <div class="payment-details">
+
+                        <span class="payment-label">
+                            Amount to Send
+                        </span>
+
+                        <div
+                            class="amount"
+                            id="cryptoAmount"
+                        >
+                            $100 USDT
+                        </div>
+
+
+                        <span class="payment-label">
+                            Wallet Address
+                        </span>
+
+
+                        <div class="wallet-row">
+
+                            <div
+                                class="wallet-address"
+                                id="walletAddress"
+                            >
+                                YOUR-USDT-WALLET-ADDRESS
+                            </div>
+
+                            <button
+                                class="copy-btn"
+                                onclick="copyWallet()"
+                                id="copyButton"
+                            >
+                                Copy
+                            </button>
+
+                        </div>
+
+
+                        <!-- QR CODE -->
+
+                        <div class="qr-container">
+
+                            <img
+                                id="qrCode"
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=YOUR-USDT-WALLET-ADDRESS"
+                                alt="Payment QR Code"
+                            >
+
+                        </div>
+
+
+                        <!-- WARNING -->
+
+                        <div class="warning">
+
+                            <strong>
+                                Important:
+                            </strong>
+
+                            Only send the selected cryptocurrency
+                            using the selected network.
+
+                            Sending funds using the wrong cryptocurrency
+                            or network may result in permanent loss of funds.
+
+                        </div>
+
+
+                        <!-- STEPS -->
+
+                        <div class="steps">
+
+
+                            <div class="step">
+
+                                <div class="step-number">
+                                    1
+                                </div>
+
+                                <div class="step-content">
+
+                                    <strong>
+                                        Copy the wallet address
+                                    </strong>
+
+                                    <span>
+                                        Copy the payment address above.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="step">
+
+                                <div class="step-number">
+                                    2
+                                </div>
+
+                                <div class="step-content">
+
+                                    <strong>
+                                        Send the exact amount
+                                    </strong>
+
+                                    <span>
+                                        Send the required amount using the selected cryptocurrency.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="step">
+
+                                <div class="step-number">
+                                    3
+                                </div>
+
+                                <div class="step-content">
+
+                                    <strong>
+                                        Confirm your payment
+                                    </strong>
+
+                                    <span>
+                                        After sending the payment, continue to the confirmation page.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- CONFIRMATION -->
+
+                        <div class="confirm-area">
+
+                            <p>
+                                Already made the payment?
+                            </p>
+
+                            <button
+                                class="confirm-btn"
+                                onclick="confirmPayment()"
+                            >
+                                I've Made the Payment
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                G 100 Forex Signal Pro
+            </p>
+
+            <p style="margin-top: 8px;">
+                30 Days • Professional Forex Signals
+            </p>
+
+            <p style="margin-top: 15px;">
+                © 2026 G 100 Forex Signal Pro. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        /*
+        ==========================================
+        PLAN CONFIGURATION
+        ==========================================
+        */
+
+        let selectedPlan = "";
+        let selectedPrice = 0;
+
+
+        /*
+        ==========================================
+        WALLET CONFIGURATION
+
+        REPLACE THESE WITH YOUR REAL ADDRESSES
+        ==========================================
+        */
+
+        const wallets = {
+
+            USDT: {
+                address: "YOUR-USDT-WALLET-ADDRESS",
+                network: "TRC20"
+            },
+
+            BTC: {
+                address: "YOUR-BITCOIN-WALLET-ADDRESS",
+                network: "Bitcoin"
+            },
+
+            ETH: {
+                address: "YOUR-ETHEREUM-WALLET-ADDRESS",
+                network: "ERC20"
+            }
+
+        };
+
+
+        /*
+        ==========================================
+        SELECT PLAN
+        ==========================================
+        */
+
+        function selectPlan(plan, price) {
+
+            selectedPlan = plan;
+            selectedPrice = price;
+
+            document.getElementById("plansPage").style.display = "none";
+
+            document.getElementById("paymentPage").style.display = "block";
+
+            document.getElementById("selectedPlan").textContent = plan;
+
+            document.getElementById("selectedPrice").textContent =
+                "$" + price;
+
+            updatePaymentMethod();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /*
+        ==========================================
+        UPDATE PAYMENT METHOD
+        ==========================================
+        */
+
+        function updatePaymentMethod() {
+
+            const crypto =
+                document.getElementById("cryptoSelect").value;
+
+            const wallet =
+                wallets[crypto];
+
+            document.getElementById("cryptoAmount").textContent =
+                "$" + selectedPrice + " " + crypto;
+
+
+            document.getElementById("walletAddress").textContent =
+                wallet.address;
+
+
+            /*
+            Update QR code
+            */
+
+            const qrData =
+                encodeURIComponent(wallet.address);
+
+            document.getElementById("qrCode").src =
+                "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
+                + qrData;
+
+        }
+
+
+        /*
+        ==========================================
+        COPY WALLET ADDRESS
+        ==========================================
+        */
+
+        async function copyWallet() {
+
+            const address =
+                document.getElementById("walletAddress").textContent;
+
+            const button =
+                document.getElementById("copyButton");
+
+
+            try {
+
+                await navigator.clipboard.writeText(address);
+
+                button.textContent = "Copied ✓";
+
+                setTimeout(function () {
+
+                    button.textContent = "Copy";
+
+                }, 2000);
+
+            } catch (error) {
+
+                alert("Please copy the wallet address manually.");
+
+            }
+
+        }
+
+
+        /*
+        ==========================================
+        BACK TO PLANS
+        ==========================================
+        */
+
+        function goBack() {
+
+            document.getElementById("paymentPage").style.display = "none";
+
+            document.getElementById("plansPage").style.display = "block";
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        /*
+        ==========================================
+        CONFIRM PAYMENT
+
+        REPLACE THE URL BELOW WITH YOUR
+        EXISTING CONFIRMATION PAGE.
+        ==========================================
+        */
+
+        function confirmPayment() {
+
+            const confirmationPage =
+                "YOUR-CONFIRMATION-PAGE-URL";
+
+            window.location.href = confirmationPage;
+
+        }
+
+    </script>
+
+</body>
+</html>
