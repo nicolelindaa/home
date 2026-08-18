@@ -661,7 +661,7 @@
 
                     <!-- BASIC -->
 
-                    <div class="plan-card">
+                    <div onclick="selectPlan('Basic', 50)" class="plan-card">
 
                         <div class="plan-name">
                             BASIC
@@ -719,7 +719,7 @@
 
                     <!-- ADVANCED -->
 
-                    <div class="plan-card popular">
+                    <div onclick="selectPlan('Advanced', 100)" class="plan-card popular">
 
                         <div class="popular-label">
                             MOST POPULAR
@@ -742,10 +742,6 @@
                         </div>
 
                         <ul class="features">
-
-                            <li>
-                                Everything in Basic
-                            </li>
 
                             <li>
                                 More trading signals
@@ -785,7 +781,7 @@
 
                     <!-- PRO -->
 
-                    <div class="plan-card">
+                    <div onclick="selectPlan('Pro', 200)" class="plan-card">
 
                         <div class="plan-name">
                             PRO
@@ -804,10 +800,6 @@
                         </div>
 
                         <ul class="features">
-
-                            <li>
-                                Everything in Advanced
-                            </li>
 
                             <li>
                                 Maximum signal frequency
